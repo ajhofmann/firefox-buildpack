@@ -47,3 +47,10 @@ export PATH=$BUILD_DIR/vendor/firefox:\$PATH
 export LD_LIBRARY_PATH="\$LD_LIBRARY_PATH:$BUILD_DIR/vendor/firefox"
 EOF
 fi
+
+mkdir /app/vendor/geckodriver
+cd /app/vendor/geckodriver
+wget https://github.com/mozilla/geckodriver/releases/download/v0.18.0/geckodriver-v0.18.0-linux64.tar.gz
+tar -xvzf geckodriver*
+chmod +x geckodriver
+export PATH=$PATH:/app/vendor/geckodriver/geckodriver
