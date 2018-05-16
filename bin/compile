@@ -33,6 +33,13 @@ mkdir -p $BUILD_DIR/vendor
 tar jxf $CACHE_DIR/$FILE_NAME -C $CACHE_DIR
 mv $CACHE_DIR/$ARCHIVE_NAME $BUILD_DIR/vendor/
 
+echo "-----> exporting PATH"
+PROFILE_PATH="$BUILD_DIR/.profile.d/firefox.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+cat << EOF > $PROFILE_PATH
+export PATH="\$HOME/vendor/firefox:\$PATH"
+export LD_LIBRARY_PATH="\$LD_LIBRARY_PATH:\$HOME/vendor/firefox"
+
 mkdir $BUILD_DIR/vendor/geckodriver
 cd $BUILD_DIR/vendor/geckodriver
 
@@ -40,13 +47,6 @@ wget https://github.com/mozilla/geckodriver/releases/download/v0.20.1/geckodrive
 tar -xvzf geckodriver*
 chmod +x geckodriver
 export PATH="\$HOME/vendor/geckodriver/geckodriver:\$PATH"
-
-echo "-----> exporting PATH"
-PROFILE_PATH="$BUILD_DIR/.profile.d/firefox.sh"
-mkdir -p $(dirname $PROFILE_PATH)
-cat << EOF > $PROFILE_PATH
-export PATH="\$HOME/vendor/firefox:\$PATH"
-export LD_LIBRARY_PATH="\$LD_LIBRARY_PATH:\$HOME/vendor/firefox"
 EOF
 
 if [ -w ${bp_dir} ]; then
