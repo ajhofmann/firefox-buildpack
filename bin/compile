@@ -19,7 +19,7 @@ ENV_VERSION=$ENV_DIR/FIREFOX_VERSION
 # Buildpack URL
 ARCHIVE_NAME=firefox
 FILE_NAME=${ARCHIVE_NAME}-${VERSION}.tar.bz2
-BUILDPACK_FIREFOX_PACKAGE="https://download.mozilla.org/?product=firefox-nightly-latest-ssl&os=linux64&lang=en-US"
+BUILDPACK_FIREFOX_PACKAGE="https://download.mozilla.org/?product=firefox-nightly-latest-ssl&os=linux&lang=en-US"
 
 mkdir -p $CACHE_DIR
 if ! [ -e $CACHE_DIR/$FILE_NAME ]; then
