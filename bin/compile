@@ -6,7 +6,7 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 
 # config
-VERSION=61.0b9
+VERSION=60.0.1
 LANG=en-US
 PLATFORM=linux64
 
@@ -17,8 +17,8 @@ ARCHIVE_NAME=firefox
 ARCHIVE_NAME_GECKO=geckodriver
 FILE_NAME=${ARCHIVE_NAME}-${VERSION}.tar.bz2
 FILE_NAME_GECKO=${ARCHIVE_NAME_GECKO}-v${VERSION_GECKO}-${PLATFORM}.tar.gz
-BUILDPACK_FIREFOX_PACKAGE="https://download.mozilla.org/?product=firefox-${VERSION}-SSL&os=${PLATFORM}&lang=${LANG}"
-#BUILDPACK_FIREFOX_PACKAGE="https://download.mozilla.org/?product=firefox-60.0.2esr-SSL&os=linux64&lang=en-US"
+#BUILDPACK_FIREFOX_PACKAGE="https://download.mozilla.org/?product=firefox-${VERSION}-SSL&os=${PLATFORM}&lang=${LANG}"
+BUILDPACK_FIREFOX_PACKAGE="https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-central/firefox-62.0a1.en-US.linux-x86_64.tar.bz2"
 BUILDPACK_GECKODRIVER_PACKAGE="https://github.com/mozilla/geckodriver/releases/download/v${VERSION_GECKO}/${FILE_NAME_GECKO}"
 
 
