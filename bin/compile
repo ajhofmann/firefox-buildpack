@@ -5,6 +5,14 @@ set -e
 BUILD_DIR=$1
 CACHE_DIR=$2
 
+function indent() {
+  c='s/^/       /'
+  case $(uname) in
+    Darwin) sed -l "$c";;
+    *)      sed -u "$c";;
+  esac
+}
+
 # config
 VERSION=57.0.4
 LANG=en-US
